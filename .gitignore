@@ -1,0 +1,10 @@
+listar-exames/bin
+listar-exames/obj
+regulacao.core/bin
+regulacao.core/obj
+UI/obj
+UI/bin
+publish
+Output
+*.exe
+*.dll
