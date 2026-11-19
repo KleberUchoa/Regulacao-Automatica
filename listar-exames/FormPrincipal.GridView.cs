@@ -156,15 +156,14 @@ public partial class FormPrincipal : Form
                     $"Excluir atendimento?")
                     == DialogResult.OK)
                 {
-                    atendimentos.Remove(atendimento);
+                    atendimentos.Remove(atendimento ?? throw new InvalidOperationException("Atendimento não encontrado"));
                 }
                 break;
         }
     }
     private void dtgv_MouseLeave(object? sender, EventArgs e)
     {
-        var dtgv = sender as DataGridView;
-        if (dtgv == null)
+        if (sender is not DataGridView dtgv)
             return;
         hoverAtual = HoverAcao.Nenhuma;
         dtgv.Cursor = Cursors.Default;
@@ -172,8 +171,7 @@ public partial class FormPrincipal : Form
     }
     private void Dtgv_MouseMove(object? sender, MouseEventArgs e)
     {
-        var dtgv = sender as DataGridView;
-        if (dtgv == null)
+        if (sender is not DataGridView dtgv)
             return;
         var hit = listAtendimentos?.HitTest(e.X, e.Y);
 

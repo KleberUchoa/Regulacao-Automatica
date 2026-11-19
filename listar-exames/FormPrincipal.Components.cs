@@ -10,7 +10,7 @@ namespace listar_exames;
 public partial class FormPrincipal : Form
 {
     #region Configuração Form Principal
-    private IContainer componentsmodel = null;
+    private IContainer? componentsmodel = null;
     private void OnLoad(object? sender, EventArgs e)
     {
         if (!Directory.Exists(pastaDados))

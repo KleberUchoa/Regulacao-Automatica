@@ -1,6 +1,6 @@
 [Setup]
 AppName=Regulação Automatizada
-AppVersion=1.0.0
+AppVersion=2.0.0
 DefaultDirName={autopf}\Regulação Automatizada
 DefaultGroupName=Regulação Automatizada
 OutputDir=Output

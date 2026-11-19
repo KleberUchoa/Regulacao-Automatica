@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("listar-exames")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+795ddff9ccb21cf070a17d2f412550c6d752601c")]
 [assembly: System.Reflection.AssemblyProductAttribute("listar-exames")]
 [assembly: System.Reflection.AssemblyTitleAttribute("listar-exames")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
