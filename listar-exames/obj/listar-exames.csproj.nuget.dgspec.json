@@ -401,14 +401,14 @@
         }
       }
     },
-    "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.core\\regulacao.core.csproj": {
+    "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.Core\\regulacao.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.core\\regulacao.core.csproj",
+        "projectUniqueName": "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.Core\\regulacao.core.csproj",
         "projectName": "regulacao.core",
-        "projectPath": "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.core\\regulacao.core.csproj",
+        "projectPath": "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.Core\\regulacao.core.csproj",
         "packagesPath": "C:\\Users\\kleber\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.core\\obj\\",
+        "outputPath": "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\regulacao.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kleber\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -445,15 +445,7 @@
           "framework": "net10.0-windows10.0.26100",
           "targetAlias": "net10.0-windows10.0.26100.0",
           "dependencies": {
-            "MSTest": {
-              "target": "Package",
-              "version": "[4.0.2, )"
-            },
             "Microsoft.Playwright": {
-              "target": "Package",
-              "version": "[1.61.0, )"
-            },
-            "Microsoft.Playwright.MSTest": {
               "target": "Package",
               "version": "[1.61.0, )"
             }
@@ -471,8 +463,20 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
               "name": "Microsoft.Windows.SDK.NET.Ref",
               "version": "[10.0.26100.57, 10.0.26100.57]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[10.0.12, 10.0.12]"
             }
           ],
           "frameworkReferences": {
@@ -759,6 +763,11 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
       }
     },
     "C:\\Users\\kleber\\Desktop\\Regulacao-Automatica\\UI\\UI.csproj": {
@@ -817,8 +826,20 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
               "name": "Microsoft.Windows.SDK.NET.Ref",
               "version": "[10.0.26100.57, 10.0.26100.57]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[10.0.12, 10.0.12]"
             }
           ],
           "frameworkReferences": {
@@ -1123,6 +1144,11 @@
             "System.Xml.XPath": "(,4.3.32767]",
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }
