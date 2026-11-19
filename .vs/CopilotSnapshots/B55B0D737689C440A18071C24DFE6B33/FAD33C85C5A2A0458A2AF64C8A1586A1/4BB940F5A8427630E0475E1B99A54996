@@ -1,0 +1,178 @@
+﻿using Microsoft.Playwright;
+using Microsoft.Playwright.MSTest;
+using regulacao.core.browser;
+using regulacao.core.models;
+using regulacao.core.services;
+
+
+namespace regulacao.core.pages;
+
+public class FormularioAtendimentoPage
+{
+    private readonly BrowserSession? session;
+    private readonly string? linkSite;
+    private readonly LogService? log;
+    public FormularioAtendimentoPage() { }
+    public FormularioAtendimentoPage(BrowserSession session, string site, LogService? log)
+    {
+        this.session = session;
+        linkSite = site;
+        this.log = log;
+
+    }
+    public async Task PreencherFormulario(Padroes padroes, Atendimento[] atendimentos)
+    {
+        var browserSession = session ?? throw new InvalidOperationException("A sessão do navegador não foi inicializada.");
+        foreach (var at in atendimentos)
+        {
+            if (at is null)
+                throw new InvalidDataException("A lista contém um atendimento nulo.");
+
+            var nomePaciente = at.Nome ?? "";
+            var url = $"{linkSite}/atendimentos/new";
+            //vai para o link atendimentos/new
+            await browserSession.Page.GotoAsync(url);
+            await browserSession.Page.WaitForURLAsync(url);
+            //insere o medico solicitante
+            await browserSession.Page.ClickAsync("//*[@id=\"select2-atendimento_medico_solicitante_id-container\"]/span");
+            await browserSession.Page.FillAsync("//span[@class=\"select2-search select2-search--dropdown\"]/input", at.MedicoSolicitante ?? "");
+            await Task.Delay(1500);
+            await browserSession.Page.Locator("//li[@class=\"select2-results__option select2-results__option--highlighted\"]").ClickAsync();
+            //insere documento do paciente
+            await browserSession.Page.ClickAsync("//*[@id=\"select2-atendimento_paciente_id-container\"]/span");
+            var docs = new List<string>(2);
+            bool pacienteEncontrado = false;
+            if (!string.IsNullOrEmpty(at.Cpf))
+                docs.Add(at.Cpf);
+            if (!string.IsNullOrEmpty(at.Cns))
+                docs.Add(at.Cns);
+            if (docs.Count == 0)
+            {
+                throw new Exception("Paciente não possui CPF ou CNS.");
+            }
+            foreach (var doc in docs)
+            {
+                if (!string.IsNullOrEmpty(doc))
+                {
+                    await browserSession.Page.FillAsync("//span[@class=\"select2-search select2-search--dropdown\"]/input", doc);
+                    await Task.Delay(5000);
+                    var list = browserSession.Page.Locator("#select2-atendimento_paciente_id-results > .select2-results__option ");
+
+                    var option = browserSession.Page.Locator("//li[@class=\"select2-results__option select2-results__option--highlighted\"]");
+                    if (await list.CountAsync() > 1)
+                    {
+                        await option.ClickAsync();
+                        pacienteEncontrado = true;
+                        break;
+                    }
+                }
+            }
+            // Se nenhum paciente for encontrado, pausa execução para permitir a inserção manual do paciente
+            if (!pacienteEncontrado)
+            {
+                await browserSession.Page.FillAsync("//span[@class=\"select2-search select2-search--dropdown\"]/input", docs[0]);
+                var option = browserSession.Page.Locator("//li[@class=\"select2-results__option select2-results__option--highlighted\"]");
+                await option.WaitForAsync();
+                await Task.Delay(1500);
+                await option.ClickAsync();
+                var cnsInput = browserSession.Page.Locator("//input[@id=\"atendimento_paciente_attributes_cartao\"]");
+                await cnsInput.WaitForAsync();
+                await cnsInput.FillAsync(at.Cns ?? "");
+                var cpfInput = browserSession.Page.Locator("//input[@id=\"atendimento_paciente_attributes_cpf\"]");
+                await cpfInput.WaitForAsync();
+                await cpfInput.FillAsync(at.Cpf ?? "");
+                var nomeInput = browserSession.Page.Locator("//input[@id=\"atendimento_paciente_attributes_nome\"]");
+                await nomeInput.WaitForAsync();
+                await nomeInput.FillAsync(at.Nome ?? "");
+                await browserSession.Page.PauseAsync();
+            }
+            //insere procedimentos
+            var procedimentos = at.Procedimentos ?? [];
+            for (int i = 0; i < procedimentos.Count; i++)
+            {
+                var guia = browserSession.Page
+                    .Locator("#guias > .fields")
+                    .Nth(i);
+
+                await guia
+                    .Locator("[aria-labelledby*='procedimento_id']")
+                    .ClickAsync();
+
+                await browserSession.Page
+                    .Locator(".select2-search__field")
+                    .FillAsync(procedimentos[i].Codigo ?? "");
+
+                await browserSession.Page
+                    .Locator(".select2-results__option--highlighted")
+                    .ClickAsync();
+
+                if (i < procedimentos.Count - 1)
+                {
+                    await browserSession.Page
+                        .Locator("a.new_procedimento")
+                        .ClickAsync();
+
+                    // Aguarda o novo procedimento ser criado
+                    await Expect(browserSession.Page.Locator("#guias > .fields"))
+                        .ToHaveCountAsync(i + 2);
+                }
+            }
+            //insere histórico
+            await browserSession.Page.Locator("//textarea[@id=\"atendimento_descricao_clinica\"]").ClickAsync();
+            await browserSession.Page.Locator("//textarea[@id=\"atendimento_descricao_clinica\"]").FillAsync(at.Historico ?? "");
+            //insere prioridade
+            await browserSession.Page.ClickAsync("//div[@class=\"form-group select optional atendimento_prioridade_atendimento_id col-md-6\"]//span[@class=\"select2-selection select2-selection--single\"]");
+            await browserSession.Page.FillAsync("//span[@class=\"select2-search select2-search--dropdown\"]/input", padroes.Prioridade ?? "");
+            var itemSelecionado = browserSession.Page.Locator("//li[@class=\"select2-results__option select2-results__option--highlighted\"]");
+            await Expect(itemSelecionado).ToBeVisibleAsync();
+            await itemSelecionado.ClickAsync();
+            //insere cid
+            await browserSession.Page.ClickAsync("//div[@class=\"form-group select required atendimento_cid_id col-md-6\"]//span[@class=\"select2-selection select2-selection--single\"]");
+            await browserSession.Page.FillAsync("//span[@class=\"select2-search select2-search--dropdown\"]/input", padroes.Cid ?? "");
+            itemSelecionado = browserSession.Page.Locator("//li[@class=\"select2-results__option select2-results__option--highlighted\"]");
+            await Expect(itemSelecionado).ToBeVisibleAsync();
+            await itemSelecionado.ClickAsync();
+            //insere nivel de urgencia
+            await browserSession.Page.ClickAsync("//div[@class=\"form-group select required atendimento_classificacao_de_risco col-md-6\"]//span[@class=\"select2-selection select2-selection--single\"]");
+            await browserSession.Page.FillAsync("//span[@class=\"select2-search select2-search--dropdown\"]/input", padroes.NivelDeUrgencia ?? "");
+            itemSelecionado = browserSession.Page.Locator("//li[@class=\"select2-results__option select2-results__option--highlighted\"]");
+            await Expect(itemSelecionado).ToBeVisibleAsync();
+            await itemSelecionado.ClickAsync();
+            //clica no botão de enviar
+            await browserSession.Page.ClickAsync("//button[@type=\"submit\"]", new Microsoft.Playwright.PageClickOptions
+            {
+                Timeout = 60000
+            });
+            if (browserSession.Page.Url.Contains("/atendimento/new") &&
+               await browserSession.Page.IsVisibleAsync("#select2-atendimento_medico_solicitante_id-container"))
+            {
+                await browserSession.Page.ClickAsync("#new_atendimento> div.card > div.card_body > a.btn.btn-default");
+                continue;
+            }
+            if (!await browserSession.Page.IsVisibleAsync(".simple_form.edit_atendimento"))
+            {
+                var divAlerta = browserSession.Page.Locator(".alert.alert-danger");
+               
+                if (await divAlerta.IsVisibleAsync())
+                {
+                    
+                    var pacienteSelecionado = browserSession.Page.Locator("#select2-atendimento_paciente_id-container");
+                    var infoPaciente = await pacienteSelecionado.GetAttributeAsync("title");
+                    var listaErros = divAlerta.Locator("#erros_campos");
+                    var linhas = listaErros.Locator("ul.mb-0 li");
+                    log?.AdicionarLinha($"Paciente: {infoPaciente}");
+                    for(int i = 0; i < await linhas.CountAsync(); i++)
+                    {
+                        var msn = await linhas.Nth(i).TextContentAsync();
+                        log?.AdicionarLinha(at?.Nome + msn ?? "");
+                    }
+                } 
+                else
+                    log?.AdicionarLinha("Alerta de Erro não encontrado");
+                continue;
+            }  
+            var formularioAgendamento = new FormularioAgendamentoPage(browserSession, at.DataAtendimento, nomePaciente, log);
+            await formularioAgendamento.PreencherFormulario(padroes);
+        }
+    }
+}

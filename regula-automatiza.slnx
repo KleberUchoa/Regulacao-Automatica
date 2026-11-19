@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="listar-exames/listar-exames.csproj" />
+  <Project Path="regulacao.core/regulacao.core.csproj" />
+  <Project Path="UI/UI.csproj" Id="40682758-050c-4490-b8d5-5171fb144ef4" />
+</Solution>

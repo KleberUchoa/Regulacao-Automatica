@@ -1,0 +1,37 @@
+﻿using regulacao.core.browser;
+using regulacao.core.services;
+
+namespace regulacao.core.pages;
+public class LoginPage
+{
+    private string? site;
+    private readonly BrowserSession session;
+    public LoginPage(BrowserSession session)
+    {
+        this.session = session;
+    }
+    public async Task Login(string site, string usuario, string senha)
+    {
+        this.site = site;
+        
+        await session.Page.GotoAsync(site);
+        await session.Page.FillAsync("#usuario_email", usuario);
+        await session.Page.FillAsync("#usuario_password", senha);
+        await session.Page.ClickAsync("button[type=submit]");
+    }
+    public async Task WaitInitialPage()
+    {
+        try
+        {
+            await session.Page.WaitForURLAsync((site ?? "") + "atendimentos", new Microsoft.Playwright.PageWaitForURLOptions
+            {
+                Timeout = 10000
+            });
+        }
+        catch (Microsoft.Playwright.TimeoutException ex)
+        {
+            throw new FalhaLoginException("Falha no login: " +  ex.Message);
+        }
+        
+    }
+}

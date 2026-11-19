@@ -1,0 +1,49 @@
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\bin\Release\net10.0-windows\UI.deps.json
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\bin\Release\net10.0-windows\UI.dll
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\bin\Release\net10.0-windows\UI.pdb
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.AlertaUI.resources
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.DialogUI.resources
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.UI.resources
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.csproj.GenerateResource.cache
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.AssemblyInfoInputs.cache
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.AssemblyInfo.cs
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.csproj.CoreCompileInputs.cache
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.dll
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\refint\UI.dll
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.pdb
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\ref\UI.dll
+C:\Users\klebe\OneDrive\Área de Trabalho\Extensão Regulação\UI\obj\Release\net10.0-windows\UI.sourcelink.json
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\bin\Release\net10.0-windows\UI.deps.json
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\bin\Release\net10.0-windows\UI.dll
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\bin\Release\net10.0-windows\UI.pdb
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.AlertaUI.resources
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.DialogUI.resources
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.UI.resources
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.csproj.GenerateResource.cache
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.AssemblyInfoInputs.cache
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.AssemblyInfo.cs
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.csproj.CoreCompileInputs.cache
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.sourcelink.json
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.dll
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\refint\UI.dll
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.pdb
+C:\Users\kleber\source\repos\KleberUchoa\Regulacao-Automatica\UI\obj\Release\net10.0-windows\ref\UI.dll
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\bin\Release\net10.0-windows\UI.deps.json
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\bin\Release\net10.0-windows\UI.dll
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\bin\Release\net10.0-windows\UI.pdb
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.AlertaUI.resources
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.DialogUI.resources
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.UI.resources
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.csproj.GenerateResource.cache
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.AssemblyInfoInputs.cache
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.AssemblyInfo.cs
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.csproj.CoreCompileInputs.cache
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.sourcelink.json
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.dll
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\refint\UI.dll
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.pdb
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\ref\UI.dll
+C:\Users\kleber\Desktop\Regulacao-Automatica\UI\obj\Release\net10.0-windows\UI.csproj.Up2Date

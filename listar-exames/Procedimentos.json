@@ -1,0 +1,122 @@
+[
+  {
+    "Nome": "Hemograma Completo",
+    "Codigo": "0202020380"
+  },
+  {
+    "Nome": "Glicose",
+    "Codigo": "0202010473"
+  },
+  {
+    "Nome": "Hemoglobina Glicosilada",
+    "Codigo": "0202010503"
+  },
+  {
+    "Nome": "Creatinina",
+    "Codigo": "0202010317"
+  },
+  {
+    "Nome": "Ureia",
+    "Codigo": "0202010694"
+  },
+  {
+    "Nome": "Colesterol Total",
+    "Codigo": "0202010295"
+  },
+  {
+    "Nome": "HDL",
+    "Codigo": "0202010279"
+  },
+  {
+    "Nome": "LDL",
+    "Codigo": "0202010287"
+  },
+  {
+    "Nome": "Triglicerídeos",
+    "Codigo": "0202010678"
+  },
+  {
+    "Nome": "TGO",
+    "Codigo": "0202010643"
+  },
+  {
+    "Nome": "TGP",
+    "Codigo": "0202010651"
+  },
+  {
+    "Nome": "TSH",
+    "Codigo": "0202060250"
+  },
+  {
+    "Nome": "PSA",
+    "Codigo": "0202030113"
+  },
+  {
+    "Nome": "Urina",
+    "Codigo": "0202050017"
+  },
+  {
+    "Nome": "Ácido Úrico",
+    "Codigo": "0202010120"
+  },
+  {
+    "Nome": "Cálcio",
+    "Codigo": "0202010210"
+  },
+  {
+    "Nome": "Ferritina",
+    "Codigo": "0202010384"
+  },
+  {
+    "Nome": "Ferro Sérico",
+    "Codigo": "0202010392"
+  },
+  {
+    "Nome": "Fósforo",
+    "Codigo": "0202010430"
+  },
+  {
+    "Nome": "Hemoglobina",
+    "Codigo": "0202020304"
+  },
+  {
+    "Nome": "Insulina",
+    "Codigo": "0202060268"
+  },
+  {
+    "Nome": "Lítio",
+    "Codigo": "0202070255"
+  },
+  {
+    "Nome": "Magnésio",
+    "Codigo": "0202010562"
+  },
+  {
+    "Nome": "Mercúrio",
+    "Codigo": "0202070263"
+  },
+  {
+    "Nome": "Potássio",
+    "Codigo": "0202010600"
+  },
+  {
+    "Nome": "PCR",
+    "Codigo": "0202030202"
+  },
+  {
+    "Nome": "T4",
+    "Codigo": "0202060373"
+  },
+  {
+    "Nome": "Transferrina",
+    "Codigo": "0202010660"
+  },
+  {
+    "Nome": "Zinco",
+    "Codigo": "020207032"
+  },
+  {
+    "Nome": "VDRL para detecção de sífilis em gestantes",
+    "Codigo": "0202031179"
+  }
+]
